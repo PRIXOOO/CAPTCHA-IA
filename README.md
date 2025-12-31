@@ -5,7 +5,7 @@
 
 <div align="center">
 
-# PRIXOOOCAPTCHA-IA — Captcha sous LLM [file:1]
+# PRIXOOOCAPTCHA-IA — Captcha sous LLM [Google CAPTCHA](https://developers.google.com/static/recaptcha/images/newCaptchaAnchor.gif?hl=fr)
 
 **Un CAPTCHA comportemental full‑stack : détection Humain vs Bot via mouvements de souris + modèle ML hybride (Random Forest + second avis LLM en zone de doute).** [file:1]
 
