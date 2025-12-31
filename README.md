@@ -21,6 +21,15 @@
 
 ---
 
+## ⚠️Configuration — Clé Gemini (optionnel)
+
+Le projet peut utiliser **Gemini** comme “second avis” en *zone de doute* côté API, et aussi pour le bot attaquant.  
+➡️ Pour activer ça, il faut renseigner une clé API Gemini dans :
+- `sitePythonVerifbot/API.py`
+- `sitePythonTrainmodel/LLM-VL-1.py`
+- `sitePythonTrainmodel/LLM-VL-2.py`
+---
+
 ## Pourquoi ce projet ? [file:1]
 
 Sur un web de plus en plus automatisé, distinguer un humain d’un bot est un enjeu concret de cybersécurité. [file:1]  
@@ -45,15 +54,7 @@ Ce projet propose un **CAPTCHA comportemental** : au lieu de lire du texte défo
 - Capture de l’architecture.  
   <!-- Ajoutez votre schéma ici -->
 
----
 
-## Configuration — Clé Gemini (optionnel)
-
-Le projet peut utiliser **Gemini** comme “second avis” en *zone de doute* côté API, et aussi pour le bot attaquant.  
-➡️ Pour activer ça, il faut renseigner une clé API Gemini dans :
-- `sitePythonVerifbot/API.py`
-- `sitePythonTrainmodel/LLM-VL-1.py`
-- `sitePythonTrainmodel/LLM-VL-2.py`
 
 ---
 
