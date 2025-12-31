@@ -1,0 +1,5 @@
+{
+  "name": "Humanity Protocol",
+  "description": "A sequential captcha suite designed to capture behavioral biometrics for LLM-based human verification.",
+  "requestFramePermissions": []
+}
