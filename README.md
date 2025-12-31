@@ -26,8 +26,8 @@
 Le projet peut utiliser **Gemini** comme “second avis” en *zone de doute* côté API, et aussi pour le bot attaquant.  
 ➡️ Pour activer ça, il faut renseigner une clé API Gemini dans :
 - `/Python/Verifbot/API.py`
-- `Python/Trainmodel/LLM-VL-1.py`
-- `Python/Trainmodel/LLM-VL-2.py`
+- `/Python/Trainmodel/LLM-VL-1.py`
+- `/Python/Trainmodel/LLM-VL-2.py`
 ---
 
 ## Pourquoi ce projet ? [file:1]
