@@ -47,6 +47,16 @@ Ce projet propose un **CAPTCHA comportemental** : au lieu de lire du texte défo
 
 ---
 
+## Configuration — Clé Gemini (optionnel)
+
+Le projet peut utiliser **Gemini** comme “second avis” en *zone de doute* côté API, et aussi pour le bot attaquant.  
+➡️ Pour activer ça, il faut renseigner une clé API Gemini dans :
+- `sitePythonVerifbot/API.py`
+- `sitePythonTrainmodel/LLM-VL-1.py`
+- `sitePythonTrainmodel/LLM-VL-2.py`
+
+---
+
 ## Architecture (vue d’ensemble) [file:1]
 
 **Pipeline principal :** navigateur (jeux) → API FastAPI → extraction de features → modèle ML → verdict. [file:1]  
