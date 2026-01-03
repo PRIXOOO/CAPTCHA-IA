@@ -52,10 +52,7 @@ Ce projet propose un **CAPTCHA comportemental** : au lieu de lire du texte défo
 
 ## Démo (à compléter)
 
-- Vidéo / GIF de l’expérience utilisateur (mini‑jeux → verdict).  
-  <!-- Ajoutez votre GIF ici -->
-- Capture de l’architecture.  
-  <!-- Ajoutez votre schéma ici -->
+[!DEMO](https://github.com/PRIXOOO/CAPTCHA-IA/blob/30001de2ef3d5608cbc6cf60c629ede2f8caa4d7/DEMO.gif)
 
 
 
