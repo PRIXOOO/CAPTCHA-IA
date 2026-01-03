@@ -11,7 +11,7 @@ from google import genai
 from google.genai import types
 
 # --- CONFIGURATION ---
-API_KEY = "AIzaSyBzZaEtznpQsUPDweXMn5zyohu_LZ5fCxk" 
+API_KEY = "Votre clé" 
 OFFSET_X = 0
 OFFSET_Y = 0
 
@@ -186,3 +186,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
