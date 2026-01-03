@@ -12,7 +12,7 @@
 <!-- Remplace par votre bannière -->
 <!-- ![Bannière](./assets/banner.png) -->
 
-[![Python](https://img.shields.io/badge/Python-3.10-blue)](#)  
+[![Python](https://img.shields.io/badge/Python-3.13-blue)](#)  
 [![FastAPI](https://img.shields.io/badge/FastAPI-API-green)](#)
 [![React](https://img.shields.io/badge/React-Frontend-61DAFB)](#)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6)](#)
