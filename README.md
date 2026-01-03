@@ -136,7 +136,7 @@ Puis consulter la doc interactive : `http://localhost:8000/docs`.
 Le projet inclut un bot “adversaire” pour évaluer la robustesse du système : capture écran + repérage via OpenCV + trajectoires générées/ajustées par Gemini + exécution souris.
 Le dashboard propose un bouton de test automatique qui lance successivement plusieurs scripts (protocole 1/2/3).
 
-> Important : certains tests nécessitent le navigateur en plein écran et une initialisation préalable, sinon la détection d’éléments à l’écran peut être perturbée.
+> Important : certains tests nécessitent le navigateur en plein écran ,une initialisation préalable et d'une connexion stable (avec un upload correct!), sinon la détection d’éléments à l’écran peut être perturbée.
 
 ---
 
