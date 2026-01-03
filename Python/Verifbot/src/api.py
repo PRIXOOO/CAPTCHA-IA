@@ -108,15 +108,17 @@ async def analyze_game(task_id: str, payload: Dict[Any, Any], request: Request):
     if not model:
         return {"verdict": "ERROR", "message": "API non prête"}
 
-    # --- 1. IDENTIFICATION DU JOUEUR ---
-    # On essaie de trouver un 'session_id' dans le payload, sinon on utilise l'IP
+# --- 1. IDENTIFICATION DU JOUEUR ---
     session_id = payload.get("session_id", request.client.host)
     
-    # Nettoyage de la mémoire si c'est le début (optionnel, ou géré par le client)
-    # Si tu veux recommencer à zéro à chaque premier jeu (ex: puzzle), décommente :
-    # if task_id == "puzzle" and session_id in SESSION_MEMORY:
-    #     del SESSION_MEMORY[session_id]
+    # --- RESET AUTOMATIQUE (Le code important) ---
+    # Si le jeu reçu est "puzzle" (le premier de ta liste), 
+    # on considère que c'est une nouvelle tentative -> On vide la mémoire.
+    if task_id == "puzzle":
+        print(f"🔄 Nouvelle session détectée pour {session_id}. Remise à zéro des scores.")
+        SESSION_MEMORY[session_id] = []
 
+    # La suite reste inchangée...
     features = extract_features(payload)
     if not features:
         return {"verdict": "ERROR", "message": "Données vides"}
@@ -132,12 +134,21 @@ async def analyze_game(task_id: str, payload: Dict[Any, Any], request: Request):
     if 0.30 < proba_bot < 0.80:
         print(f"🤔 Doute ({proba_bot:.2f}). Appel Gemini...")
         gemini_res = ask_gemini(payload, task_id, features)
-        is_bot_gemini = gemini_res.get("is_bot", False)
         
-        score_gemini = 0.85 if is_bot_gemini else 0.15
-        final_score = (proba_bot + score_gemini) / 2
-        source = "Hybride (Moyenne)"
-
+        # On récupère le score "HUMAIN" (ex: 0.90 pour 90% humain)
+        human_confidence = gemini_res.get("human_confidence", 1.0)
+        
+        # --- L'INVERSION EST ICI ---
+        # Si Humain à 90% (0.90) -> Score Robot = 0.10
+        # Si Humain à 20% (0.20) -> Score Robot = 0.80
+        score_gemini_bot = 1.0 - human_confidence
+        
+        # On fait la moyenne avec ton modèle local
+        final_score = (proba_bot + score_gemini_bot) / 2
+        
+        source = "Hybride (Moyenne Inversée)"
+    else : 
+        final_score= proba_bot
     # --- 2. CALCUL DE LA MOYENNE GLOBALE ---
     if session_id not in SESSION_MEMORY:
         SESSION_MEMORY[session_id] = []
