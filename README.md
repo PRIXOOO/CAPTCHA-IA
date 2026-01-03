@@ -129,8 +129,10 @@ Puis consulter la doc interactive : `http://localhost:8000/docs`. [file:1]
 
 ## Bot attaquant (mode test) [file:1]
 
-Le projet inclut un bot “adversaire” pour évaluer la robustesse du système : capture écran + repérage via OpenCV + trajectoires générées/ajustées par Gemini + exécution souris. [file:1]  
-Le dashboard propose un bouton de test automatique qui lance successivement plusieurs scripts (protocole 1/2/3). [file:1]
+![DEMO_BOT](https://github.com/PRIXOOO/CAPTCHA-IA/raw/f9490c2c9450f87d85633c833552d19f7f9a84ed/DEMO_BOT.gif)
+
+Le projet inclut un bot “adversaire” pour évaluer la robustesse du système : capture écran + repérage via OpenCV + trajectoires générées/ajustées par Gemini + exécution souris.
+Le dashboard propose un bouton de test automatique qui lance successivement plusieurs scripts (protocole 1/2/3).
 
 > Important : certains tests nécessitent le navigateur en plein écran et une initialisation préalable, sinon la détection d’éléments à l’écran peut être perturbée.
 
