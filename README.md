@@ -35,18 +35,18 @@ Le projet peut utiliser **Gemini** comme “second avis” en *zone de doute* c�
 
 ## Pourquoi ce projet ?
 
-Sur un web de plus en plus automatisé, distinguer un humain d’un bot est un enjeu concret de cybersécurité. [file:1]  
-Ce projet propose un **CAPTCHA comportemental** : au lieu de lire du texte déformé ou de cocher une case, l’utilisateur réalise de petites épreuves et le système analyse la dynamique de la souris (vitesse, accélération, hésitations, régularité, “rectitude” des trajectoires). [file:1]
+Sur un web de plus en plus automatisé, distinguer un humain d’un bot est un enjeu concret de cybersécurité.  
+Ce projet propose un **CAPTCHA comportemental** : au lieu de lire du texte déformé ou de cocher une case, l’utilisateur réalise de petites épreuves et le système analyse la dynamique de la souris (vitesse, accélération, hésitations, régularité, “rectitude” des trajectoires). 
 
 ---
 
 ## Fonctionnalités
 
-- **3 mini‑jeux CAPTCHA** (frontend) : Trace, Puzzle, Sélection d’images, conçus pour capturer des signaux de motricité fine. [file:1]
-- **Backend IA (API FastAPI)** : réception des séries temporelles \((x, y, t)\), extraction de features cinématiques, puis prédiction **Humain / Robot**. [file:1]
-- **Détection hybride** : le Random Forest tranche si la confiance est élevée, sinon un **LLM (Gemini)** est sollicité en “zone de doute” pour un second avis. [file:1]
-- **Bot attaquant** (adversaire) : script autonome utilisant OpenCV pour repérer l’interface à l’écran et Gemini pour générer des trajectoires “humaines”, exécutées via automatisation souris. [file:1]
-- **Dashboard d’administration (Tkinter)** : lancement/gestion des services (API + site) sans manipulations complexes en ligne de commande. [file:1]
+- **3 mini‑jeux CAPTCHA** (frontend) : Trace, Puzzle, Sélection d’images, conçus pour capturer des signaux de motricité fine. 
+- **Backend IA (API FastAPI)** : réception des séries temporelles \((x, y, t)\), extraction de features cinématiques, puis prédiction **Humain / Robot**. 
+- **Détection hybride** : le Random Forest tranche si la confiance est élevée, sinon un **LLM (Gemini)** est sollicité en “zone de doute” pour un second avis. 
+- **Bot attaquant** (adversaire) : script autonome utilisant OpenCV pour repérer l’interface à l’écran et Gemini pour générer des trajectoires “humaines”, exécutées via automatisation souris.
+- **Dashboard d’administration (Tkinter)** : lancement/gestion des services (API + site) sans manipulations complexes en ligne de commande.
 
 ---
 
@@ -71,11 +71,11 @@ Ce projet propose un **CAPTCHA comportemental** : au lieu de lire du texte défo
 
 ## Stack technique
 
-- Frontend : **React + TypeScript + Vite**. [file:1]
-- Backend : **FastAPI** (serveur ASGI via **Uvicorn**). [file:1]
-- ML/Data : **scikit‑learn (Random Forest)**, Pandas, NumPy, Joblib. [file:1]
-- Bot attaquant : OpenCV, PyAutoGUI (+ génération de trajectoires via Gemini). [file:1]
-- Orchestration : Dashboard **Tkinter**, scripts `.bat` / `.sh`. [file:1]
+- Frontend : **React + TypeScript + Vite**.
+- Backend : **FastAPI** (serveur ASGI via **Uvicorn**).
+- ML/Data : **scikit‑learn (Random Forest)**, Pandas, NumPy, Joblib.
+- Bot attaquant : OpenCV, PyAutoGUI (+ génération de trajectoires via Gemini).
+- Orchestration : Dashboard **Tkinter**, scripts `.bat` / `.sh`.
 
 ---
 
@@ -83,10 +83,10 @@ Ce projet propose un **CAPTCHA comportemental** : au lieu de lire du texte défo
 
 ### Prérequis
 
-- Python **3.10**  ou au dessus (Python 3.14 est à éviter). [file:1]
-- Node.js (pour le frontend React). [file:1]
-- Ports locaux libres : **8000** (API) et **3000** (frontend). [file:1]
-- (Optionnel) Une **clé API Gemini** si vous activez l’arbitrage LLM en zone de doute. [file:1]
+- Python **3.10**  ou au dessus (Python 3.14 est à éviter).
+- Node.js (pour le frontend React).
+- Ports locaux libres : **8000** (API) et **3000** (frontend).
+- (Optionnel) Une **clé API Gemini** si vous activez l’arbitrage LLM en zone de doute.
 
 ### Lancer
 
@@ -112,8 +112,8 @@ Le site est accessible sur `http://localhost:3000`.
 ### Backend (API)
 
 Lancer directement API.py dans `/Python/Verifbot/API.py`
-L’API est servie via Uvicorn (FastAPI). [file:1]  
-Puis consulter la doc interactive : `http://localhost:8000/docs`. [file:1]
+L’API est servie via Uvicorn (FastAPI).
+Puis consulter la doc interactive : `http://localhost:8000/docs`.
 
 ---
 
@@ -127,7 +127,7 @@ Puis consulter la doc interactive : `http://localhost:8000/docs`. [file:1]
 
 ---
 
-## Bot attaquant (mode test) [file:1]
+## Bot attaquant (mode test)
 
 ![DEMO_BOT](https://github.com/PRIXOOO/CAPTCHA-IA/raw/f9490c2c9450f87d85633c833552d19f7f9a84ed/DEMO_BOT.gif)
 
