@@ -4,7 +4,7 @@ import joblib
 import pandas as pd
 import google.generativeai as genai
 from fastapi import FastAPI
-from fastapi import Request # Assure-toi d'importer Request en haut
+from fastapi import Request
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, Any
 
@@ -48,9 +48,9 @@ def load_brain():
     if os.path.exists(MODEL_PATH):
         model = joblib.load(MODEL_PATH)
         feat_cols = joblib.load(FEAT_PATH)
-        print("✅ Cerveau chargé en mémoire ! Prêt à analyser.")
+        print("Cerveau chargé en mémoire ! Prêt à analyser.")
     else:
-        print("❌ ERREUR CRITIQUE : Modèle introuvable. Lance train.py d'abord.")
+        print("ERREUR CRITIQUE : Modèle introuvable. Lance train.py d'abord.")
 
 def ask_gemini(session_json, task_name, features):
     """
@@ -103,7 +103,7 @@ def ask_gemini(session_json, task_name, features):
 
 @app.post("/analyze/{task_id}")
 async def analyze_game(task_id: str, payload: Dict[Any, Any], request: Request):
-    print(f"📥 Réception données tâche : {task_id}")
+    print(f"Réception données tâche : {task_id}")
 
     if not model:
         return {"verdict": "ERROR", "message": "API non prête"}
@@ -115,7 +115,7 @@ async def analyze_game(task_id: str, payload: Dict[Any, Any], request: Request):
     # Si le jeu reçu est "puzzle" (le premier de ta liste), 
     # on considère que c'est une nouvelle tentative -> On vide la mémoire.
     if task_id == "puzzle":
-        print(f"🔄 Nouvelle session détectée pour {session_id}. Remise à zéro des scores.")
+        print(f"Nouvelle session détectée pour {session_id}. Remise à zéro des scores.")
         SESSION_MEMORY[session_id] = []
 
     # La suite reste inchangée...
@@ -132,7 +132,7 @@ async def analyze_game(task_id: str, payload: Dict[Any, Any], request: Request):
 
     # --- LOGIQUE HYBRIDE (Ta version corrigée) ---
     if 0.30 < proba_bot < 0.80:
-        print(f"🤔 Doute ({proba_bot:.2f}). Appel Gemini...")
+        print(f"Doute ({proba_bot:.2f}). Appel Gemini...")
         gemini_res = ask_gemini(payload, task_id, features)
         
         # On récupère le score "HUMAIN" (ex: 0.90 pour 90% humain)
@@ -159,8 +159,8 @@ async def analyze_game(task_id: str, payload: Dict[Any, Any], request: Request):
     scores_du_joueur = SESSION_MEMORY[session_id]
     moyenne_globale = sum(scores_du_joueur) / len(scores_du_joueur)
     
-    print(f"📊 Scores session pour {session_id}: {scores_du_joueur}")
-    print(f"⚖️ Moyenne actuelle : {moyenne_globale:.2f}")
+    print(f"Scores session pour {session_id}: {scores_du_joueur}")
+    print(f"Moyenne actuelle : {moyenne_globale:.2f}")
 
     # --- 3. VERDICT BASÉ SUR LA MOYENNE ---
     # C'est ici que la magie opère : on juge sur la MOYENNE, pas juste le dernier jeu
