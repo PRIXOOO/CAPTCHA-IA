@@ -180,19 +180,19 @@ def analyze_with_gemini(image_path, grid_rect):
             if "matches" in data:
                 return data
             else:
-                print(f"⚠️ JSON incomplet reçu : {cleaned_text}")
+                print(f"JSON incomplet reçu : {cleaned_text}")
                 
         except Exception as e:
-            print(f"⚠️ Erreur lors de la tentative {attempt+1} : {e}")
+            print(f"Erreur lors de la tentative {attempt+1} : {e}")
             # Si c'est la dernière tentative, on affiche la réponse brute pour débugger
             if attempt == max_retries - 1:
-                print(f"❌ Échec définitif. Réponse brute de l'IA : {raw_text if 'raw_text' in locals() else 'Aucune'}")
+                print(f"Échec définitif. Réponse brute de l'IA : {raw_text if 'raw_text' in locals() else 'Aucune'}")
             time.sleep(1) # Petite pause avant de réessayer
 
     return None
 
 def main():
-    print("🚀 Démarrage dans 2 secondes...")
+    print("Démarrage dans 2 secondes...")
     time.sleep(2)
     
     screenshot_file = "current_screen.png"
@@ -202,16 +202,16 @@ def main():
     grid_rect = get_captcha_grid(screenshot_file)
     
     if not grid_rect:
-        print("❌ Grille introuvable.")
+        print("Grille introuvable.")
         return
 
-    print("🤖 Analyse IA (Lecture consigne + Vision)...")
+    print("Analyse IA (Lecture consigne + Vision)...")
     result = analyze_with_gemini(screenshot_file, grid_rect)
     
     if result and "matches" in result:
         target = result.get("target_object", "Inconnu")
         matches = list(set(result["matches"]))
-        print(f"🎯 Consigne : '{target}' | Cases : {matches}")
+        print(f"Consigne : '{target}' | Cases : {matches}")
         
         gx, gy, gw, gh = grid_rect
         cell_w, cell_h = gw // 3, gh // 3
@@ -240,7 +240,7 @@ def main():
             # Pause humaine aléatoire après clic
             time.sleep(random.uniform(0.2, 0.6))
             
-        print("🔎 Validation...")
+        print("Validation...")
         btn_pos = find_verify_button(screenshot_file, grid_rect)
         if btn_pos:
             tx = int(btn_pos[0] / sx)
@@ -254,7 +254,7 @@ def main():
             pyautogui.click()
             
     else:
-        print("❌ L'IA n'a pas compris le captcha.")
+        print("L'IA n'a pas compris le captcha.")
 
 if __name__ == "__main__":
     main()
