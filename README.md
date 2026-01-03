@@ -138,6 +138,7 @@ Le dashboard propose un bouton de test automatique qui lance successivement plus
 
 > Important : certains tests nécessitent le navigateur en plein écran ,une initialisation préalable et d'une connexion stable (avec un upload correct!), sinon la détection d’éléments à l’écran peut être perturbée.
 
+> Temps : en général 2/3min avec un ordinateur correct + une connexion assez rapide
 ---
 
 ## Entraînement du modèle (ML) 
