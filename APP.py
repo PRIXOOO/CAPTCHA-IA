@@ -154,12 +154,12 @@ def sequence_background():
             )
             
             if resultat.returncode != 0:
-                print(f"❌ CRASH de {nom_script} !")
+                print(f"CRASH de {nom_script} !")
                 print("---------------- ERREUR ----------------")
                 print(resultat.stderr)
                 print("----------------------------------------")
             else:
-                print(f"✅ {nom_script} terminé.")
+                print(f"{nom_script} terminé.")
                 # print(resultat.stdout) 
             
             print(f"Pause 5s...")
