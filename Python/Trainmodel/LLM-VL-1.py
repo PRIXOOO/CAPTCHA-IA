@@ -11,7 +11,7 @@ from google import genai
 from google.genai import types
 
 # --- CONFIGURATION ---
-API_KEY = "Votre clé" 
+API_KEY = "AIzaSyBzZaEtznpQsUPDweXMn5zyohu_LZ5fCxk" 
 OFFSET_X = 0
 OFFSET_Y = 0
 
@@ -89,7 +89,7 @@ def generate_human_path(start_x, start_y, end_x, end_y):
     dist = ((end_x - start_x)**2 + (end_y - start_y)**2)**0.5
     if dist < 10: return None
 
-    print(f"🧠 Gemini calcule le trajet : ({start_x},{start_y}) -> ({end_x},{end_y})")
+    print(f"Gemini calcule le trajet : ({start_x},{start_y}) -> ({end_x},{end_y})")
     
     prompt = f"""
     Tu es un moteur de souris biométrique.
@@ -114,7 +114,7 @@ def generate_human_path(start_x, start_y, end_x, end_y):
         data = json.loads(response.text)
         return data.get("path", [])
     except Exception as e:
-        print(f"⚠️ Erreur IA : {e}")
+        print(f"Erreur IA : {e}")
         return [{"x": end_x, "y": end_y}]
 
 def execute_human_move(path):
@@ -153,7 +153,7 @@ def execute_human_move(path):
     pyautogui.mouseUp()
 
 def main():
-    print("⏳ Démarrage... (3s)")
+    print("Démarrage... (3s)")
     time.sleep(3)
     
     screenshot_path = "scan_screen.png"
@@ -162,7 +162,7 @@ def main():
     img_coords_start, img_coords_end = get_coordinates_opencv(screenshot_path)
     
     if not img_coords_start or not img_coords_end:
-        print("❌ Échec Vision : Bouton ou Cible introuvable.")
+        print("Échec Vision : Bouton ou Cible introuvable.")
         return
 
     img = cv2.imread(screenshot_path)
@@ -179,7 +179,7 @@ def main():
     real_end_x = int(img_coords_end[0] * ratio_x) + OFFSET_X
     real_end_y = int(img_coords_end[1] * ratio_y) + OFFSET_Y
     
-    print(f"🎯 Cible verrouillée à : {real_end_x}, {real_end_y}")
+    print(f"Cible verrouillée à : {real_end_x}, {real_end_y}")
 
     path = generate_human_path(real_start_x, real_start_y, real_end_x, real_end_y)
     execute_human_move(path)
