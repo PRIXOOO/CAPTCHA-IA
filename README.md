@@ -159,6 +159,7 @@ Le dashboard propose un bouton de test automatique qui lance successivement plus
 ## Auteurs
 
 Projet réalisé du 7 octobre 2025 au 6 janvier 2026.
+
 Membres :
 | Nom & Prénom       | Identifiant GitHub            |
 |--------------------|-------------------------------|
