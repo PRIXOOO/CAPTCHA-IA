@@ -120,7 +120,7 @@ Le site est accessible sur `http://localhost:3000`.
 
 ### Backend (API)
 
-Lancer directement API.py dans `/Python/Verifbot/API.py`
+Lancer directement API.py dans `/Python/Verifbot/src/API.py`
 L’API est servie via Uvicorn (FastAPI).
 Puis consulter la doc interactive : `http://localhost:8000/docs`.
 
