@@ -104,10 +104,16 @@ Ce projet propose un **CAPTCHA comportemental** : au lieu de lire du texte défo
 
 ### Frontend
 
-Depuis le dossier du site :
-npm install
-npm run build
-npm run dev
+Depuis le dossier du site : 
+tapez "cmd"(ou shell) dans la barre d'adresse  (ou vous pouvez accéder au dossier courant en utilisant 'cd') , puis dans le cmd(shell) tapez :
+'npm install'
+
+puis,
+
+'npm run build'
+
+
+'npm run dev'
 
 Le site est accessible sur `http://localhost:3000`.
 
