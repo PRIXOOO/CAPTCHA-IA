@@ -165,7 +165,7 @@ Membres :
 | Nom & Prénom       | Identifiant GitHub            |
 |--------------------|-------------------------------|
 | Kebbache Walid     | [PRIXOOO](https://github.com/PRIXOOO) |
-| Yahou Sarah        | *(à compléter)*               |
+| Yahou Sarah        |               |
 
 
 ---
