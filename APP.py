@@ -250,7 +250,7 @@ def ouvrir_fenetre_assistant():
     tk.Frame(fenetre_srv, height=2, bd=1, relief="sunken").pack(fill="x", padx=20, pady=10)
 
     # --- ÉTAPE 4 (TEST BOT) ---
-    lbl_et4 = tk.Label(fenetre_srv, text="Phase de Test (Optionnelle)", font=("Arial", 10, "bold"))
+    lbl_et4 = tk.Label(fenetre_srv, text="Phase de test (optionnelle) : merci de ne pas intervenir durant le processus", font=("Arial", 10, "bold"))
     lbl_et4.pack(pady=2)
 
     global btn_test_llm
@@ -275,3 +275,4 @@ btn_srv_main = tk.Button(root, text="Ouvrir l'Assistant", command=ouvrir_fenetre
 btn_srv_main.pack(pady=5)
 
 root.mainloop()
+
