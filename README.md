@@ -21,7 +21,7 @@
 
 ---
 
-## ⚠️Configuration — Clé Gemini (optionnel)
+## ⚠️Configuration — Clé Gemini
 
 Le projet fonctionne sur **Windows** et théoriquement sur Linux/MacOS
 
